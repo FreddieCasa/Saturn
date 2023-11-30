@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import "./Product.css";
 
-const Product = ({image, title, description, price, quantity, category}) => {
+const Product = ({image, title, description, price, quantity, category, isOnSale}) => {
 
     return (
         <>        
@@ -12,7 +12,8 @@ const Product = ({image, title, description, price, quantity, category}) => {
                 <Card.Text> {description} </Card.Text>
                 <Card.Text> {price} </Card.Text>
                 <Card.Text> {quantity} </Card.Text> 
-                <Card.Text> {category} </Card.Text>                        
+                <Card.Text> {category} </Card.Text>    
+                <Card.Text> {isOnSale} </Card.Text>                     
             </Card.Body>
             </Card>          
         </> 
