@@ -1,6 +1,7 @@
 import Product from "./Product";
-import Badge from 'react-bootstrap/Badge';
+
 import "./PriceList.css"
+import { Modal } from "bootstrap";
 
 
 
@@ -69,13 +70,15 @@ const products = [
 
 const mappedProducts = products.map( product => {
     return <Product
+            key={product.title}
             image={product.image}
             title={product.title}
             description={product.description}
             price={product.price}
             quantity={product.quantity}
             category={product.category}
-            isOnSale={product.isOnSale && <Badge className="myBadge" bg="danger">on sale</Badge>}                               
+            isOnSale={product.isOnSale}
+            
             />;
             
 })
@@ -105,6 +108,7 @@ const PriceList = () => {
                 title="shirt06"/> */}
 
                 {mappedProducts}
+                
 
             </div>
         </>
