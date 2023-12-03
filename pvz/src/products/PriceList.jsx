@@ -1,7 +1,7 @@
 import Product from "./Product";
 
 import "./PriceList.css"
-import { Modal } from "bootstrap";
+import { CharToast } from "./ChartToast";
 
 
 
@@ -69,7 +69,7 @@ const products = [
 
 
 const mappedProducts = products.map( product => {
-    return <Product
+    return (<Product
             key={product.title}
             image={product.image}
             title={product.title}
@@ -77,11 +77,12 @@ const mappedProducts = products.map( product => {
             price={product.price}
             quantity={product.quantity}
             category={product.category}
-            isOnSale={product.isOnSale}
-            
-            />;
-            
-})
+            isOnSale={product.isOnSale}                        
+            />)
+
+    }
+)
+
 
 
 const PriceList = () => {
@@ -108,11 +109,10 @@ const PriceList = () => {
                 title="shirt06"/> */}
 
                 {mappedProducts}
-                
 
             </div>
         </>
-        )
+    )
 }
 
 export default PriceList;

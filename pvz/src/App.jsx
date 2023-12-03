@@ -1,12 +1,14 @@
 import './App.css'
-import PriceList from "./PriceList"
+// import { IceCreamFlavour } from './iceCream/IceCreamFlavour'
+import IceCreamStation from './iceCream/IceCreamStation'
+// import PriceList from "./products/PriceList"
 
 function App() {
 
   return (
     <>
-      <PriceList />
-      
+      {/* <PriceList />       */}
+      <IceCreamStation />
     </>
   )
 }
