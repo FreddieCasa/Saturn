@@ -5,13 +5,16 @@ import Row from 'react-bootstrap/Row';
 import Toast from 'react-bootstrap/Toast';
 
 
-export const CharToast = ({title}) => {
-  const [show, setShow] = useState(false);
-
+export const MyToast = ({ title, setShowToast, showToast }) => {
   return (
     <Row>
       <Col xs={6}>
-        <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
+        <Toast
+          onClose={() => setShowToast(false)}
+          show={showToast}
+          delay={3000}
+          autohide
+        >
           <Toast.Header>
             <img
               src="holder.js/20x20?text=%20"
@@ -24,8 +27,8 @@ export const CharToast = ({title}) => {
         </Toast>
       </Col>
       <Col xs={6}>
-        <Button onClick={() => setShow(true)}>Show Toast</Button>
+        <Button onClick={() => setShowToast(true)}>Show Toast</Button>
       </Col>
     </Row>
   );
-}
+};
