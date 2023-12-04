@@ -3,8 +3,13 @@ import "./Product.css";
 import Badge from "react-bootstrap/Badge";
 
 const Product = ({ product, setShowModal, setCurrentProduct }) => {
-  const { image, title, description, price, quantity, category, isOnSale } =
-    product;
+  // const { image, title, description, price, quantity, category, isOnSale } =
+  //   product;
+
+  const { brand, description, price, stock} = product;
+
+
+
 
   const handleClick = (event) => {
     console.log(event);
@@ -17,18 +22,18 @@ const Product = ({ product, setShowModal, setCurrentProduct }) => {
       <button onClick={(event) => handleClick(event)}>PRESS</button>
       <Card style={{ width: "18rem" }}>
         <Card.Body>
-          {isOnSale && (
+          {/* {isOnSale && (
             <Badge className="myBadge" bg="danger">
               on sale
             </Badge>
-          )}
-          <Card.Img className="shirtImage" src={image} />
-          <Card.Title> {title} </Card.Title>
-          <Card.Text> {description} </Card.Text>
-          <Card.Text> {price} </Card.Text>
-          <Card.Text> {quantity} </Card.Text>
-          <Card.Text> {category} </Card.Text>
-          <Card.Text> {isOnSale} </Card.Text>
+          )} */}
+          {/* <Card.Img className="shirtImage" src="" /> */}
+          <Card.Title> <h3> {brand} </h3> </Card.Title>
+          <Card.Text>description: {description} </Card.Text>
+          <Card.Text>price: {price} </Card.Text>
+          <Card.Text>stock: {stock} </Card.Text>
+          {/* <Card.Text> {category} </Card.Text>
+          <Card.Text> {isOnSale} </Card.Text> */}
         </Card.Body>
       </Card>
     </div>

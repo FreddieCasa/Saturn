@@ -44,6 +44,17 @@ const IceCreamStand = () => {
   const [flavourCount, setFlavourCount] = useState(0);
   const [total, setTotal] = useState(0);
 
+  const addPortion = (flavor) => {
+    const exists = flavourCount.find(item => item.flavor === flavor.flavor);
+    if(exists) {
+      setFlavourCount([...flavourCount])
+    } else {
+      setFlavourCount([...flavourCount, flavor])
+    }
+    // const newList = [...flavourList, flavor]
+    // setFlavourCount(flavourCount + 1);
+  };
+
   const flavourList = iceCreamInfo.map((singleFlavour) => {
     return (
       <IceCreamFlavour
@@ -52,7 +63,7 @@ const IceCreamStand = () => {
         color={singleFlavour.color}
         fontColor={singleFlavour.fontColor}
         flavourCount={flavourCount}
-        setFlavourCount={setFlavourCount}
+        setFlavourCount={addPortion}
       />
     );
   });
@@ -68,9 +79,9 @@ const IceCreamStand = () => {
     );
   });
 
-  const addPortion = () => {
-    setTotal(total + 10);
-  };
+  // const addPortion = () => {
+  //   setTotal(total + 10);
+  // };
 
   return (
     <>

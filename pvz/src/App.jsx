@@ -1,14 +1,14 @@
 import './App.css'
-import IceCreamStand from './iceCream/IceCreamStand'
+// import IceCreamStand from './iceCream/IceCreamStand'
 // import FirstLevel from './test/FirstLevel'
-// import PriceList from "./products/PriceList"
+import PriceList from "./products/PriceList"
 
 function App() {
 
   return (
     <>
-      {/* <PriceList />       */}
-      <IceCreamStand />
+      <PriceList />      
+      {/* <IceCreamStand /> */}
       {/* <FirstLevel />       */}
     </>
   )
