@@ -1,6 +1,6 @@
-.flavourContainer {
 
-    size: 100%;
-    background-color: yellow;
 
+.singleFlavourContainer {
+    padding: 2rem;
+    margin: 2rem;
 }

@@ -1,5 +1,6 @@
 import './App.css'
-import IceCreamStation from './iceCream/IceCreamStation'
+import IceCreamStand from './iceCream/IceCreamStand'
+// import FirstLevel from './test/FirstLevel'
 // import PriceList from "./products/PriceList"
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
   return (
     <>
       {/* <PriceList />       */}
-      <IceCreamStation />
+      <IceCreamStand />
+      {/* <FirstLevel />       */}
     </>
   )
 }
