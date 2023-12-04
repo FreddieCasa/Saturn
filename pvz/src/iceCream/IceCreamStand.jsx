@@ -41,7 +41,8 @@ import PriceCounter from "./PriceCounter.jsx";
 import { iceCreamInfo } from "./iceCreamInfo.js";
 
 const IceCreamStand = () => {
-  const [flavourCount, setFlavourCount] = useState(0);  
+  const [flavourCount, setFlavourCount] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const flavourList = iceCreamInfo.map((singleFlavour) => {
     return (
@@ -67,13 +68,22 @@ const IceCreamStand = () => {
     );
   });
 
+  const addPortion = () => {
+    setTotal(total + 10);
+  };
+
   return (
     <>
-      <div className="flavourContainer">{flavourList}</div>
+      <div
+        onClick={() => addPortion()}
+        className="flavourContainer"
+      >
+        {flavourList}
+      </div>
       <div className="bottomTotalContainer">
         <div className="statsContainer">{quantityList}</div>
         <div className="priceCounterContainer">
-          <PriceCounter />
+          <PriceCounter total={total} />
         </div>
       </div>
     </>

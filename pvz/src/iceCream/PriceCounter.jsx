@@ -1,12 +1,12 @@
 
-const PriceCounter = () => {
+const PriceCounter = ({total}) => {
 
 
     return (
       <>
         <p>discount - </p>
         <p>subTotal - </p>
-        <p>total - </p>
+        <p>total - {total} </p>
       </>
     );
 }
