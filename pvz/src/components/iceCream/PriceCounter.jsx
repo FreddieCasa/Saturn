@@ -6,7 +6,7 @@ const PriceCounter = ({total}) => {
       <>
         <p>discount - </p>
         <p>subTotal - </p>
-        <p>total - {total} </p>
+        <p>total - </p>
       </>
     );
 }

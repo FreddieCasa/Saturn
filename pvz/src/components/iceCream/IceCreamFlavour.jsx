@@ -8,7 +8,9 @@ const IceCreamFlavour = ({
 }) => {
   const { flavor, color, fontColor } = wholeFlavour;
 
-  return (
+  // console.log("handle active field", onClickField, {flavor});
+
+  return (    
     <div
       onClick={() => onClickField(wholeFlavour)}
       style={{ background: color, color: fontColor, padding: "2rem" }}
