@@ -3,20 +3,14 @@ import { useState } from "react";
 
 
 const IceCreamFlavour = ({
-  flavor,
-  color,
-  fontColor,
-  flavourCount,
-  setFlavourCount,
+  wholeFlavour,
+  onClickField,
 }) => {
-  
-  const addPortion = () => {
-    setFlavourCount(flavourCount + 1);
-  };
+  const { flavor, color, fontColor } = wholeFlavour;
 
   return (
     <div
-      onClick={() => addPortion()}
+      onClick={() => onClickField(wholeFlavour)}
       style={{ background: color, color: fontColor, padding: "2rem" }}
       className="singleFlavourContainer"
     >

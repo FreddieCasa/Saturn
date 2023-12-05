@@ -1,6 +1,10 @@
 
 
-const FlavourQuantity = ({ flavor, color, flavourCount }) => {
+const FlavourQuantity = ({ wholeFlavour, flavourCount }) => {
+
+  const {flavor, color, fontColor} = wholeFlavour;
+
+
   return (
     <>
       <div style={{ color: color }}>

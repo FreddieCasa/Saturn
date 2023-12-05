@@ -9,15 +9,13 @@ const ProductModal = ({
   showToast,
 }) => {
   const handleClose = () => setShowModal(false);
+
   const handleAddCart = () => {
     setShowToast(true);
     setShowModal(false);
   };
 
   const { title, description, quantity } = currentProduct;
-
-  console.log("showtoast", showToast);
-  // import { IceCreamFlavour } from './iceCream/IceCreamFlavour'
 
   return (
     <>

@@ -41,29 +41,34 @@ import PriceCounter from "./PriceCounter.jsx";
 import { iceCreamInfo } from "./iceCreamInfo.js";
 
 const IceCreamStand = () => {
-  const [flavourCount, setFlavourCount] = useState(0);
+  const [activeFlavour, setActiveFlavour] = useState();
+  const [flavourCount, setFlavourCount] = useState();
   const [total, setTotal] = useState(0);
 
-  const addPortion = (flavor) => {
-    const exists = flavourCount.find(item => item.flavor === flavor.flavor);
-    if(exists) {
-      setFlavourCount([...flavourCount])
-    } else {
-      setFlavourCount([...flavourCount, flavor])
-    }
-    // const newList = [...flavourList, flavor]
-    // setFlavourCount(flavourCount + 1);
+  const handleActiveField = (flavor) => {
+    setActiveFlavour(flavor);
   };
+  console.log("active field", activeFlavour);
+
+
+  const addPortion = (activeFlavour) => {
+    const exists = flavourCount.find(
+      (item) => item.flavor === activeFlavour.flavor
+    );
+    if (exists) {
+      setFlavourCount([...flavourCount]);
+    } else {
+      setFlavourCount([...flavourCount, activeFlavour]);
+    }
+  };
+  // console.log("add", addPortion);
 
   const flavourList = iceCreamInfo.map((singleFlavour) => {
     return (
       <IceCreamFlavour
         key={singleFlavour.key}
-        flavor={singleFlavour.flavor}
-        color={singleFlavour.color}
-        fontColor={singleFlavour.fontColor}
-        flavourCount={flavourCount}
-        setFlavourCount={addPortion}
+        wholeFlavour={singleFlavour}
+        onClickField={handleActiveField}
       />
     );
   });
@@ -72,23 +77,15 @@ const IceCreamStand = () => {
     return (
       <FlavourQuantity
         key={singleFlavour.key}
-        flavor={singleFlavour.flavor}
-        color={singleFlavour.color}
+        wholeFlavour={singleFlavour}
         flavourCount={flavourCount}
       />
     );
   });
 
-  // const addPortion = () => {
-  //   setTotal(total + 10);
-  // };
-
   return (
     <>
-      <div
-        onClick={() => addPortion()}
-        className="flavourContainer"
-      >
+      <div className="flavourContainer">
         {flavourList}
       </div>
       <div className="bottomTotalContainer">
