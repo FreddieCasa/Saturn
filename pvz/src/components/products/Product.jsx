@@ -2,6 +2,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import "./Product.css";
 import Badge from "react-bootstrap/Badge";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ product, setShowModal, setCurrentProduct }) => {
   const {
@@ -24,6 +25,8 @@ const Product = ({ product, setShowModal, setCurrentProduct }) => {
     setCurrentProduct(product);
   };
 
+  const navigate = useNavigate();
+
   return (
     <div>
       <button onClick={(event) => handleClick(event)}>PRESS</button>
@@ -42,6 +45,7 @@ const Product = ({ product, setShowModal, setCurrentProduct }) => {
           <Card.Text>stock: {stock} </Card.Text>
           {/* <Card.Text> {category} </Card.Text>
           <Card.Text> {isOnSale} </Card.Text> */}
+          <button onClick={() => navigate(`/pricelist/${id}`)}>more details</button>
         </Card.Body>
       </Card>
     </div>

@@ -41,29 +41,28 @@ import PriceCounter from "./PriceCounter.jsx";
 import { iceCreamInfo } from "./iceCreamInfo.js";
 
 const IceCreamStand = () => {
-  const [activeFlavour, setActiveFlavour] = useState();
-  const [flavourCount, setFlavourCount] = useState([]); 
-  const [total, setTotal] = useState(0);  
+  const [activeFlavour, setActiveFlavour] = useState(); //{chocolate: 0, vanilla: 0,}
+  const [flavourCount, setFlavourCount] = useState([...iceCreamInfo]); 
+
+
 
   const handleActiveField = (flavor) => {
+    console.log(flavor) //Strawberry
     const flavourToAdd = setActiveFlavour(flavor);
     addPortion(flavourToAdd);
   };
   
-  const addPortion = (activeFlavour) => {
-
-    const exists = flavourCount.find(
-      (item) => item.lavor === activeFlavour.flavor
-    );
-
+  const addPortion = (flavor) => {
+    const exists = flavourCount.find((item) => item.flavor === flavor);    
     if (exists) {
-      setFlavourCount([...flavourCount]);
-      console.log("flavour count in if statement", flavourCount);
-    } else {
-      setFlavourCount([...flavourCount, activeFlavour]);
-      console.log("flavour count in else statement", flavourCount);
+      setFlavourCount(() => {
+        setFlavourCount(activeFlavour.count + 1)
+      });
     }
   };
+
+
+
   console.log("active flavour", activeFlavour);
 
   const flavourList = iceCreamInfo.map((singleFlavour) => {
@@ -76,12 +75,12 @@ const IceCreamStand = () => {
     );
   });
 
-  const quantityList = iceCreamInfo.map((singleFlavour) => {
+  const quantityList = flavourCount.map((singleFlavour) => {
     return (
       <FlavourQuantity
         key={singleFlavour.key}
         wholeFlavour={singleFlavour}
-        flavourCount={flavourCount}
+        flavourCount={singleFlavour.count}
       />
     );
   });
@@ -92,7 +91,7 @@ const IceCreamStand = () => {
       <div className="bottomTotalContainer">
         <div className="statsContainer">{quantityList}</div>
         <div className="priceCounterContainer">
-          <PriceCounter total={total} />
+          {/* <PriceCounter total={total} /> */}
         </div>
       </div>
     </>

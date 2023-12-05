@@ -12,7 +12,7 @@ const IceCreamFlavour = ({
 
   return (    
     <div
-      onClick={() => onClickField(wholeFlavour)}
+      onClick={() => onClickField(flavor)}
       style={{ background: color, color: fontColor, padding: "2rem" }}
       className="singleFlavourContainer"
     >
