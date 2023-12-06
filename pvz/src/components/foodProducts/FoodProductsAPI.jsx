@@ -1,17 +1,21 @@
-import SingleFoodProduct from "./SingleFoodProduct.jsx";
+import SingleFoodProductAPI from "./SingleFoodProductAPI.jsx";
+import axios from "axios";
 import "./FoodProducts.css";
 import { useState, useEffect } from "react";
-import CartItemsList from "./CartItemsList.jsx";
-import axios from "axios";
+import CartItemsListAPI from "./CartItemsListAPI.jsx";
 
 const FoodProducts = () => {
   const [cartList, setCartList] = useState([]);
-  const [sum, setSum] = useState(0);
+  const [sum, setSum] = useState(0);  
   const [isLoading, setIsLoading] = useState(true);
   const [productArray, setProductArray] = useState();
-
+  
   const handleButtonClickAdd = (product) => {
-    setProductArray([...cartList, product]);
+    const isInCart = cartList.filter((item) => item.id === product.id).map((item) => item.id===product.id); 
+    // console.log(isInCart);
+    if (!isInCart[0]) {
+      setCartList([...cartList, product]);
+    }
     setSum(sum + product.price);
   };
 
@@ -37,8 +41,8 @@ const FoodProducts = () => {
 
   const productAssortment = productArray.map((item) => {
     return (
-      <SingleFoodProduct
-        key={item.key}
+      <SingleFoodProductAPI
+        key={item.id}
         product={item}
         click={handleButtonClickAdd}
       />
@@ -47,8 +51,8 @@ const FoodProducts = () => {
 
   const productInCart = cartList.map((item) => {
     return (
-      <CartItemsList
-        key={item.key}
+      <CartItemsListAPI
+        key={item.id}
         product={item}
         click={handleButtonClickRemove}
       />

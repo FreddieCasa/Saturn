@@ -23,28 +23,31 @@ const NavBar = () => {
       <>
         <Navbar className="navBar" bg="dark" data-bs-theme="white">
           <Container className="navContainer">
-            <Navbar.Brand href="#home">
+            <span className="navElement">
               <Link to="/">home</Link>
-            </Navbar.Brand>
+            </span>
+            {/* <Navbar.Brand href="#home">
+              <Link to="/">home</Link>
+            </Navbar.Brand> */}
             <Nav className="navElements">
-              <Nav.Link className="navElement" href="#home">
+              <span className="navElement">
                 <Link to="/stand">ledai</Link>
-              </Nav.Link>
-              <Nav.Link className="navElement" href="#features">
+              </span>
+              <span className="navElement">
                 <Link to="/pricelist">products</Link>
-              </Nav.Link>
-              <Nav.Link className="navElement" href="#features">
+              </span>
+              <span className="navElement">
                 <Link to="/foodproducts">food products</Link>
-              </Nav.Link>
-              <Nav.Link className="navElement" href="#features">
+              </span>
+              <span className="navElement">
                 <Link to="/foodproductsapi">fp api</Link>
-              </Nav.Link>
-              <Nav.Link className="navElement" href="#features">
+              </span>
+              <span className="navElement">
                 <Link to="/productform">product form</Link>
-              </Nav.Link>
-              <Nav.Link className="navElement" href="navElement">
+              </span>
+              <span className="navElement">
                 <Link to="/test">test</Link>
-              </Nav.Link>
+              </span>
             </Nav>
           </Container>
         </Navbar>

@@ -13,5 +13,7 @@ console.log(arr2);
 
 
 
-
-
+const isInArr = arr.filter((item) => item.j===2).map((item) => {
+  return item.j === 2;
+});
+console.log("is array", isInArr);

@@ -8,7 +8,7 @@ const FoodProducts = () => {
   const [cartList, setCartList] = useState([]);
   const [sum, setSum] = useState(0);
 
-  const handleButtonClickAdd = (product) => {
+  const handleButtonClickAdd = (product) => {    
     setCartList([...cartList, product]);
     setSum(sum + product.price);
   };
@@ -21,7 +21,7 @@ const FoodProducts = () => {
   const productAssortment = initialData.map((item) => {
     return (
       <SingleFoodProduct
-        key={item.key}
+        key={item.id}
         product={item}
         click={handleButtonClickAdd}
       />
@@ -31,7 +31,7 @@ const FoodProducts = () => {
   const productInCart = cartList.map((item) => {
     return (
       <CartItemsList
-        key={item.key}
+        key={item.id}
         product={item}
         click={handleButtonClickRemove}
       />

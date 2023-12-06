@@ -24,17 +24,17 @@ const ProductForm = () => {
         alert(`product -> ${formData.brand} - ${formData.title} succesfully submitted`);
     };
 
-    const postData = () => {
-        axios.post("url", 
-            const data = {
-            brand:{formData.brand},
-            category: {formData.category},
-            description: {formData.description},
-            price: {formData.price},
-            title: {formData.title}})
-            .then(() =>console.log(data))
-            .catch((error) => console.log(error));
-        };
+    // const postData = () => {
+    //     axios.post("url", 
+    //         const data = {
+    //         brand:{formData.brand},
+    //         category: {formData.category},
+    //         description: {formData.description},
+    //         price: {formData.price},
+    //         title: {formData.title}})
+    //         .then(() =>console.log(data))
+    //         .catch((error) => console.log(error));
+    //     };
 
     const productToAdd = {
         brand:"brand",
