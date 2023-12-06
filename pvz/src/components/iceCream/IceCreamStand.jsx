@@ -100,7 +100,7 @@ const IceCreamStand = () => {
     if (exists) {
       setFlavourCount(() =>
         flavourCount.map((item) =>
-          item.flavor === flovourToAdd ? { ...item, count: +1 } : { ...item }
+          item.flavor === flovourToAdd ? { ...item, count: + 1 } : { ...item }
         )
       );
     }

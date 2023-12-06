@@ -39,6 +39,9 @@ const NavBar = () => {
               <Nav.Link className="navElement" href="#features">
                 <Link to="/foodproductsapi">fp api</Link>
               </Nav.Link>
+              <Nav.Link className="navElement" href="#features">
+                <Link to="/productform">product form</Link>
+              </Nav.Link>
               <Nav.Link className="navElement" href="navElement">
                 <Link to="/test">test</Link>
               </Nav.Link>

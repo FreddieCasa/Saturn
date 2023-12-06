@@ -9,6 +9,7 @@ import EnlargedProductCard from "./components/products/singleProduct/EnlargedPro
 import NotFoundPage from './components/site/pageNotFound/NotFoundPage';
 import FoodProducts from './components/foodProducts/FoodProducts';
 import FoodProductsAPI from "./components/foodProducts/FoodProductsAPI";
+import ProductForm from './components/forma/productForm';
 
 function App() {
 
@@ -24,6 +25,9 @@ function App() {
 
         <Route path="/foodproducts" element={<FoodProducts />} />
         <Route path="/foodproductsapi" element={<FoodProductsAPI />} />
+
+        <Route path="/productForm" element={<ProductForm/>} />
+
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
