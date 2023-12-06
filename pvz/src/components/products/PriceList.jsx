@@ -56,15 +56,7 @@ const PriceList = () => {
           setShowToast={setShowToast}
         />
       )}
-      {mappedProducts}
-      {showModal && (
-        <ProductModal
-          show={showModal}
-          setShowModal={setShowModal}
-          currentProduct={currentProduct}
-          setShowToast={setShowToast}
-        />
-      )}
+      {mappedProducts}      
     </div>
   );
 };

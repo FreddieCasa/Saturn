@@ -5,23 +5,30 @@ import FirstLevel from './components/test/FirstLevel';
 import PriceList from "./components/products/PriceList";
 import Homepage from './components/site/Homepage';
 import NavBar from './components/site/NavBar';
-import EnlargedProductCard from "./components/products/EnlargedProductCard";
+import EnlargedProductCard from "./components/products/singleProduct/EnlargedProductCard";
+import NotFoundPage from './components/site/pageNotFound/NotFoundPage';
+import FoodProducts from './components/foodProducts/FoodProducts';
+import FoodProductsAPI from "./components/foodProducts/FoodProductsAPI";
 
 function App() {
 
   return (
-    <>      
-      <NavBar/>
-      <Routes>        
-        <Route path="/" element={<Homepage/>} />
+    <>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
         <Route path="/stand" element={<IceCreamStand />} />
-        <Route path="/pricelist" element={<PriceList /> } />
+        <Route path="/pricelist" element={<PriceList />} />
         <Route path="/pricelist/:id" element={<EnlargedProductCard />} />
         <Route path="/test" element={<FirstLevel />} />
 
-      </Routes>      
+        <Route path="/foodproducts" element={<FoodProducts />} />
+        <Route path="/foodproductsapi" element={<FoodProductsAPI />} />
+
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </>
-  )
+  );
 }
 
 export default App

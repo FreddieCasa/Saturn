@@ -1,0 +1,18 @@
+.navBar {
+
+    padding: 1rem;
+    margin: 0;  
+}
+
+.navElement {
+    padding: 0.5rem;
+}
+
+.navElements {
+    width: 70%;
+}
+
+.navContainer {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}

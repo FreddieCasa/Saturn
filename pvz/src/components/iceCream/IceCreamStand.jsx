@@ -42,28 +42,12 @@ import { iceCreamInfo } from "./iceCreamInfo.js";
 
 const IceCreamStand = () => {
   const [activeFlavour, setActiveFlavour] = useState(); //{chocolate: 0, vanilla: 0,}
-  const [flavourCount, setFlavourCount] = useState([...iceCreamInfo]); 
-
-
+  const [flavourCount, setFlavourCount] = useState([...iceCreamInfo]);
 
   const handleActiveField = (flavor) => {
-    console.log(flavor) //Strawberry
-    const flavourToAdd = setActiveFlavour(flavor);
-    addPortion(flavourToAdd);
+    setActiveFlavour(flavor);
+    console.log("handle active field (string) -> ", flavor);
   };
-  
-  const addPortion = (flavor) => {
-    const exists = flavourCount.find((item) => item.flavor === flavor);    
-    if (exists) {
-      setFlavourCount(() => {
-        setFlavourCount(activeFlavour.count + 1)
-      });
-    }
-  };
-
-
-
-  console.log("active flavour", activeFlavour);
 
   const flavourList = iceCreamInfo.map((singleFlavour) => {
     return (
@@ -84,6 +68,44 @@ const IceCreamStand = () => {
       />
     );
   });
+
+  //--------------------------------------------------------------------------------
+  // const arr11 = [
+  //   { i: "a", j: 1 },
+  //   { i: "b", j: 2 },
+  //   { i: "c", j: 3 },
+  // ];
+  // console.log("arr11", arr11);
+
+  // const arr12 = arr11
+  //   .filter((ob) => ob.j === 3)
+  //   .map((jDelta) => ({ ...jDelta, j: 6 }));
+  // console.log("arr12", arr12);
+
+  // const arr21 = [
+  //   { i: "a", j: 1 },
+  //   { i: "b", j: 2 },
+  //   { i: "c", j: 3 },
+  // ];
+  // console.log("arr21", arr21);
+
+  // const arr22 = arr21.map((jDelta) =>
+  //   jDelta.j === 3 ? { ...jDelta, j: 6 } : jDelta
+  // );
+  // console.log("arr22", arr22);
+  //--------------------------------------------------------------------------------
+
+  const addPortion = (flovourToAdd) => {
+    const exists = flavourCount.find((item) => item.flavor === flovourToAdd);
+    if (exists) {
+      setFlavourCount(() =>
+        flavourCount.map((item) =>
+          item.flavor === flovourToAdd ? { ...item, count: +1 } : { ...item }
+        )
+      );
+    }
+  };
+  addPortion(activeFlavour);
 
   return (
     <>
