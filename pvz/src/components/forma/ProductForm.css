@@ -1,13 +1,26 @@
+.formDesign {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 100%;
+    text-align: left;
+    padding: 3rem;
+    box-sizing: border-box;
+    background-color: #7F462C;
+    color: white;
+    font-size: 1.2rem;
+};
 
+.formLabel {
+    padding: 0;
+}
 
-
-
-
-
-
-
-
-
+.textFormInput {
+    font-size: 1.1rem;
+    padding: 0.1rem;
+    color:  #2F0000;
+    background-color: #cfb2a4;
+    margin: 0.2rem;
+};
 
 
 
