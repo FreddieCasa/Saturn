@@ -14,13 +14,6 @@ const ProductForm = () => {
     title: "",
   });
 
-  //   const handleForm = (event) => {
-  //     setFormData((prevFormData) => ({
-  //       ...prevFormData,
-  //       [event.target.name]: event.target.value,
-  //     }));
-  //   };
-
   const handleForm = (event) => {
     setFormData((previousFormData) => ({
       ...previousFormData,
