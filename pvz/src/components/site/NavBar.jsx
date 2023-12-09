@@ -37,10 +37,10 @@ const NavBar = () => {
                 <Link to="/pricelist">products</Link>
               </span>
               <span className="navElement">
-                <Link to="/foodproducts">food products</Link>
+                <Link to="/foodproducts">nd 2.1</Link>
               </span>
               <span className="navElement">
-                <Link to="/foodproductsapi">fp api</Link>
+                <Link to="/foodproductsapi">nd 2.1++</Link>
               </span>
               <span className="navElement">
                 <Link to="/productform">product form</Link>
