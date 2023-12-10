@@ -48,6 +48,9 @@ const NavBar = () => {
               <span className="navElement">
                 <Link to="/test">test</Link>
               </span>
+              <span className="navElement">
+                <Link to="/card">card</Link>
+              </span>
             </Nav>
           </Container>
         </Navbar>

@@ -10,6 +10,7 @@ import NotFoundPage from './components/site/pageNotFound/NotFoundPage';
 import FoodProducts from './components/foodProducts/FoodProducts';
 import FoodProductsAPI from "./components/foodProducts/FoodProductsAPI";
 import ProductForm from "./components/forma/ProductForm";
+import BankCard from './components/nd_bankCard/BankCard';
 
 function App() {
 
@@ -26,8 +27,8 @@ function App() {
         <Route path="/foodproducts" element={<FoodProducts />} />
         <Route path="/foodproductsapi" element={<FoodProductsAPI />} />
 
-        <Route path="/productForm" element={<ProductForm/>} />
-
+        <Route path="/productForm" element={<ProductForm />} />
+        <Route path="/card" element={<BankCard/>} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
